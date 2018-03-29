@@ -1,3 +1,88 @@
+# #develop#
+
+## Breaking changes
+
+## New deprecations
+
+## New features
+
+## API changes
+
+### FeatureHighlight
+
+#### MDCFeatureHighlightViewController
+
+*new* property: `featureHighlightView` in `MDCFeatureHighlightViewController`
+
+*removed* property: `innerHighlightColor` in `MDCFeatureHighlightViewController`
+
+*removed* property: `mdc_adjustsFontForContentSizeCategory` in `MDCFeatureHighlightViewController`
+
+*removed* property: `bodyColor` in `MDCFeatureHighlightViewController`
+
+*removed* property: `outerHighlightColor` in `MDCFeatureHighlightViewController`
+
+*removed* property: `titleColor` in `MDCFeatureHighlightViewController`
+
+### TextFields
+
+#### MDCTextInputControllerLegacyDefault
+
+*modified* class: `MDCTextInputControllerLegacyDefault`
+
+| Type of change: | Swift declaration |
+|---|---|
+| From: | `class MDCTextInputControllerLegacyDefault : MDCTextInputControllerFloatingPlaceholder` |
+| To: | `class MDCTextInputControllerLegacyDefault : MDCTextInputControllerBase` |
+
+*modified* class: `MDCTextInputControllerLegacyDefault`
+
+| Type of change: | Declaration |
+|---|---|
+| From: | `@interface MDCTextInputControllerLegacyDefault     : NSObject <MDCTextInputControllerFloatingPlaceholder>` |
+| To: | `@interface MDCTextInputControllerLegacyDefault : MDCTextInputControllerBase` |
+
+#### MDCTextInputControllerLegacyFullWidth
+
+*modified* class: `MDCTextInputControllerLegacyFullWidth`
+
+| Type of change: | Swift declaration |
+|---|---|
+| From: | `class MDCTextInputControllerLegacyFullWidth : MDCTextInputController` |
+| To: | `class MDCTextInputControllerLegacyFullWidth : MDCTextInputControllerFullWidth` |
+
+*modified* class: `MDCTextInputControllerLegacyFullWidth`
+
+| Type of change: | Declaration |
+|---|---|
+| From: | `@interface MDCTextInputControllerLegacyFullWidth     : NSObject <MDCTextInputController>` |
+| To: | `@interface MDCTextInputControllerLegacyFullWidth     : MDCTextInputControllerFullWidth <NSSecureCoding>` |
+## Component changes
+
+
+### FeatureHighlight
+
+#### Changes
+
+* [FeatureHighlightViewController should expose FeatureHighlightView as a property. (#3145)](https://github.com/material-components/material-components-ios/commit/24be789f57aedb732ceddecc36699f52875dc8d6) (Mohammad Cazi)
+
+### TextFields
+
+#### Changes
+
+* [Make MDCTextInputControllerLegacyDefault a subclass of MDCTextInputControllerBase  (#3152)](https://github.com/material-components/material-components-ios/commit/cb0d00be93bab192e83b0c07b83b655619bf8122) (Mohammad Cazi)
+* [Make MDCTextInputControllerLegacyFullWidth a subclass of MDCTextInputControllerFullWidth (#3154)](https://github.com/material-components/material-components-ios/commit/19f2c0fd1be06e31e7405a42aadb1004c2af5bbf) (Mohammad Cazi)
+* [[MDCTextFields + Kokoro] Making textfields dynamic type off by default (#3149)](https://github.com/material-components/material-components-ios/commit/f91317ff0455bc6ecd7b7c728bdb9821cd036aa0) (Yarden Eitan)
+
+### Snackbar
+
+#### Changes
+
+* [added inputAccessory with Snackbar dragon + Fix for it (#3156)](https://github.com/material-components/material-components-ios/commit/7a48b9171a1c3cbf7267ff337a027f28f429aa96) (Yarden Eitan)
+* [font and color updates. (#3125)](https://github.com/material-components/material-components-ios/commit/28ef4730aaeb37663a377670b8db95215c090f92) (Yarden Eitan)
+
+---
+
 # 50.0.0
 
 ## Breaking change
