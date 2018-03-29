@@ -1,10 +1,41 @@
-# #develop#
+# 51.0.0
 
 ## Breaking changes
 
-## New deprecations
+### MDCFeatureHighlightViewController
 
-## New features
+*removed* property: `innerHighlightColor` in `MDCFeatureHighlightViewController`
+
+*removed* property: `mdc_adjustsFontForContentSizeCategory` in `MDCFeatureHighlightViewController`
+
+*removed* property: `bodyColor` in `MDCFeatureHighlightViewController`
+
+*removed* property: `outerHighlightColor` in `MDCFeatureHighlightViewController`
+
+*removed* property: `titleColor` in `MDCFeatureHighlightViewController`
+
+
+### TextFields
+
+* [Make MDCTextInputControllerLegacyDefault a subclass of MDCTextInputControllerBase  (#3152)](https://github.com/material-components/material-components-ios/commit/cb0d00be93bab192e83b0c07b83b655619bf8122) (Mohammad Cazi)
+* [Make MDCTextInputControllerLegacyFullWidth a subclass of MDCTextInputControllerFullWidth (#3154)](https://github.com/material-components/material-components-ios/commit/19f2c0fd1be06e31e7405a42aadb1004c2af5bbf) (Mohammad Cazi)
+* [[MDCTextFields + Kokoro] Making textfields dynamic type off by default (#3149)](https://github.com/material-components/material-components-ios/commit/f91317ff0455bc6ecd7b7c728bdb9821cd036aa0) (Yarden Eitan)
+
+### MDCTextInputControllerLegacyDefault
+
+*modified* class: `MDCTextInputControllerLegacyDefault`
+
+| Type of change: | Swift declaration |
+|---|---|
+| From: | `class MDCTextInputControllerLegacyDefault : MDCTextInputControllerFloatingPlaceholder` |
+| To: | `class MDCTextInputControllerLegacyDefault : MDCTextInputControllerBase` |
+
+*modified* class: `MDCTextInputControllerLegacyDefault`
+
+| Type of change: | Declaration |
+|---|---|
+| From: | `@interface MDCTextInputControllerLegacyDefault     : NSObject <MDCTextInputControllerFloatingPlaceholder>` |
+| To: | `@interface MDCTextInputControllerLegacyDefault : MDCTextInputControllerBase` |
 
 ## API changes
 
