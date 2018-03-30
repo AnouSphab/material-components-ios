@@ -384,23 +384,20 @@ static inline UIColor *MDCTextInputUnderlineColor() {
   _trailingUnderlineLabel.opaque = NO;
   [_textInput addSubview:_trailingUnderlineLabel];
 
-  _leadingUnderlineLeading = [NSLayoutConstraint constraintWithItem:_leadingUnderlineLabel
-                                                          attribute:NSLayoutAttributeLeading
-                                                          relatedBy:NSLayoutRelationEqual
-                                                             toItem:_textInput
-                                                          attribute:NSLayoutAttributeLeading
-                                                         multiplier:1
-                                                           constant:0];
-  _leadingUnderlineLeading.priority = UILayoutPriorityDefaultLow;
-
-  _trailingUnderlineTrailing = [NSLayoutConstraint constraintWithItem:_trailingUnderlineLabel
-                                                            attribute:NSLayoutAttributeTrailing
-                                                            relatedBy:NSLayoutRelationEqual
-                                                               toItem:_textInput
-                                                            attribute:NSLayoutAttributeTrailing
-                                                           multiplier:1
-                                                             constant:0];
-  _trailingUnderlineTrailing.priority = UILayoutPriorityDefaultLow;
+  NSLayoutConstraint *leadingSpacing = [NSLayoutConstraint constraintWithItem:_leadingUnderlineLabel
+                                                                    attribute:NSLayoutAttributeLeading
+                                                                    relatedBy:NSLayoutRelationEqual
+                                                                       toItem:_textInput
+                                                                    attribute:NSLayoutAttributeLeading
+                                                                   multiplier:1
+                                                                     constant:0];
+  NSLayoutConstraint *trailingSpacing = [NSLayoutConstraint constraintWithItem:_textInput
+                                                                     attribute:NSLayoutAttributeTrailing
+                                                                     relatedBy:NSLayoutRelationEqual
+                                                                        toItem:_leadingUnderlineLabel
+                                                                     attribute:NSLayoutAttributeTrailing
+                                                                    multiplier:1
+                                                                      constant:0];
 
   NSLayoutConstraint *labelSpacing =
       [NSLayoutConstraint constraintWithItem:_leadingUnderlineLabel
@@ -413,7 +410,7 @@ static inline UIColor *MDCTextInputUnderlineColor() {
   labelSpacing.priority = UILayoutPriorityDefaultLow;
 
   [NSLayoutConstraint
-      activateConstraints:@[ labelSpacing, _leadingUnderlineLeading, _trailingUnderlineTrailing ]];
+      activateConstraints:@[ labelSpacing, leadingSpacing, trailingSpacing ]];
 
   NSLayoutConstraint *leadingBottom = [NSLayoutConstraint constraintWithItem:_leadingUnderlineLabel
                                                                    attribute:NSLayoutAttributeBottom
@@ -456,6 +453,16 @@ static inline UIColor *MDCTextInputUnderlineColor() {
 
   [self.textInput addSubview:_underline];
   [self.textInput sendSubviewToBack:_underline];
+
+  NSLayoutConstraint *topConstraint = [NSLayoutConstraint constraintWithItem:_leadingUnderlineLabel
+                                                                   attribute:NSLayoutAttributeTop
+                                                                   relatedBy:NSLayoutRelationEqual
+                                                                      toItem:_underline
+                                                                   attribute:NSLayoutAttributeBottom
+                                                                  multiplier:1
+                                                                    constant:5];
+  [NSLayoutConstraint
+   activateConstraints:@[ topConstraint ]];
 }
 
 #pragma mark - Border implementation
