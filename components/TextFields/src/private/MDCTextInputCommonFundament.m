@@ -398,7 +398,7 @@ static inline UIColor *MDCTextInputUnderlineColor() {
                                                                         toItem:_leadingUnderlineLabel
                                                                      attribute:NSLayoutAttributeTrailing
                                                                     multiplier:1
-                                                                      constant:0];
+                                                                      constant:-130];
 
   NSLayoutConstraint *labelSpacing =
       [NSLayoutConstraint constraintWithItem:_leadingUnderlineLabel
